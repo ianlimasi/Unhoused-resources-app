@@ -1,7 +1,7 @@
 // NOTE: This is just a place-holder template to fill out
 # Project Title
 
-Simple overview of use/purpose.
+Simple overview of use/purpose. Celestine was here
 
 ## Description
 
