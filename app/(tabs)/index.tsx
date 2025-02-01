@@ -5,7 +5,8 @@ import { Image } from "expo-image";
 import Button from "@/components/Button";
 import ImageViewer from "@/components/ImageViewer";
 
-// * require()
+import colors from "../colors";
+
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
@@ -23,6 +24,20 @@ export default function Index() {
         <Button label="Use this photo"/>
       </View>
 
+      {/* TODO: LEFTOFF */}
+      {/* Button-images (TO-BE BUTTONS) */}
+      <View
+        style={[
+          styles.buttonImages,
+          {
+            // Try setting `flexDirection` to `"row"`.
+            flexDirection: 'column',
+          },
+        ]}>
+        <View style={{flex: 1, backgroundColor: 'red'}} />
+        <View style={{flex: 2, backgroundColor: 'darkorange'}} />
+        <View style={{flex: 3, backgroundColor: 'green'}} />
+      </View>
 
       {/* <Text style={styles.text}>Home screen</Text>
       <Link href="/about" style={styles.button}>
@@ -33,8 +48,12 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
+  buttonImages: {
+    flex: 1,
+    padding: 20,
+  },
   appScreen: {
-    backgroundColor: "#25292e",
+    backgroundColor: 'white',
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
