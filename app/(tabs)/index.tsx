@@ -12,31 +12,22 @@ const PlaceholderImage = require("@/assets/images/background-image.png");
 export default function Index() {
   return (
     <View style={styles.appScreen}> 
-      {/* IMAGE */}
-      <View style={styles.imageContainer}>
-        {/* <Image source={PlaceholderImage} style={styles.image}/> */}
-        <ImageViewer imgSource={PlaceholderImage}/>
-      </View>
+    
 
-      {/* BUTTON */}
-      <View style={styles.buttonsContainer}>
-        <Button theme="primary" label="Choose a photo"/>
-        <Button label="Use this photo"/>
-      </View>
-
-      {/* TODO: LEFTOFF */}
-      {/* Button-images (TO-BE BUTTONS) */}
+      <Text> What are you looking for? </Text>
+      
       <View
         style={[
-          styles.buttonImages,
+          styles.buttonsContainer,
           {
             // Try setting `flexDirection` to `"row"`.
-            flexDirection: 'column',
+            flexDirection: 'row',
           },
         ]}>
-        <View style={{flex: 1, backgroundColor: 'red'}} />
-        <View style={{flex: 2, backgroundColor: 'darkorange'}} />
-        <View style={{flex: 3, backgroundColor: 'green'}} />
+        <Button label="Hygiene"/>
+        <Button label="Food Banks"/>
+        <Button label="Medical"/>
+        <Button label="Shelter"/>
       </View>
 
       {/* <Text style={styles.text}>Home screen</Text>
@@ -71,7 +62,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonsContainer: {
-    flex: 1 / 3,
-    alignItems: 'center',
+    height: '100%',
+    width: '100%',
+    flex: 1,
+    padding: 20,
+    // borderColor: "black",
+    // borderWidth: 10,
+    flexWrap: 'wrap',
   },
 });
