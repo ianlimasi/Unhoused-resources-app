@@ -1,7 +1,10 @@
+// LEO: my first pull-request
+// RAAHIL: My first commit
+
 // NOTE: This is just a place-holder template to fill out
 # Project Title
 
-Simple overview of use/purpose.
+Unhoused Resources App
 
 ## Description
 
@@ -16,8 +19,15 @@ An in-depth paragraph about your project and overview of use.
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+To download the program
+1. Git clone from: https://github.com/hcp-uw/Unhoused-resources-app/tree/main 
+
+To run the project yourself, one must have installed...
+1. Node.js (LTS v22.13.1) 
+2. VSCode or preferred code editor/IDE
+3. (Optional) Expo Go app on phone
+    1. Why optional? 
+    * Not recommended: One can run the app in a "web based" version after running "npx expo start"
 
 ### Executing program
 
@@ -26,6 +36,11 @@ An in-depth paragraph about your project and overview of use.
 ```
 code blocks for commands
 ```
+Once everything is installed properly...
+* git pull (just to make sure)
+* npm install (installs all necessary packages from package.json)
+* npx expo start (follow error fixing instructions if necessary)
+
 
 ## Help
 
