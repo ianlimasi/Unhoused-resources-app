@@ -13,22 +13,25 @@ export default function Index() {
   return (
     <View style={styles.appScreen}> 
     
-
-      <Text> What are you looking for? </Text>
-      
-      <View
-        style={[
-          styles.buttonsContainer,
-          {
-            // Try setting `flexDirection` to `"row"`.
-            flexDirection: 'row',
-          },
-        ]}>
-        <Button label="Hygiene"/>
-        <Button label="Food Banks"/>
-        <Button label="Medical"/>
-        <Button label="Shelter"/>
+      <View style={styles.searchSelection}>
+        <Text style={styles.header}> What are you looking for? </Text>
+        
+        <View
+          style={[
+            styles.buttonsContainer,
+            {
+              // Try setting `flexDirection` to `"row"`.
+              flexDirection: 'row',
+            },
+          ]}>
+          <Button label="Hygiene" theme="primary"/>
+          <Button label="Food Banks" theme="primary"/>
+          <Button label="Medical" theme="primary"/>
+          <Button label="Shelter" theme="primary"/>
+        </View>
+        <Button label="Submit"/>
       </View>
+
 
       {/* <Text style={styles.text}>Home screen</Text>
       <Link href="/about" style={styles.button}>
@@ -49,23 +52,29 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   }, 
+  searchSelection: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 20
+  },
   text: {
     color: "#fff",
+  },
+  header: {
+    fontWeight: 'bold',
+    fontSize: 35,
+    color: colors.navyBlue
   },
   button: {
     fontSize: 20,
     textDecorationLine: "underline",
     color: "#fff",
   },
-
   imageContainer: { //! imgCont is a FLEXBOX!
     flex: 1,
   },
   buttonsContainer: {
-    height: '100%',
     width: '100%',
-    flex: 1,
-    padding: 20,
     // borderColor: "black",
     // borderWidth: 10,
     flexWrap: 'wrap',

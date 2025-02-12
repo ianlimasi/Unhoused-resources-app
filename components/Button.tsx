@@ -11,27 +11,23 @@ export default function Button({ label, theme }: Props) {
   // PRIMARY THEME (default)
   if (theme == 'primary') {
     return (
-      <View 
-      style={[
-        styles.buttonContainer,
-        { borderWidth: 4, borderColor: '#ffd33d', borderRadius: 18 } //! Overriding styles
-      ]}>
-
-        <Pressable 
-        style={[styles.button]} 
-        onPress={() => alert('You pressed a button.')}>
-          <FontAwesome name="picture-o" size={18} color="#25292e" style={styles.buttonIcon} />
-          <Text style={[styles.buttonLabel]}>{label}</Text>
+      <View style={styles.buttonContainer}>
+        <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+          <Text style={styles.buttonLabel}>{label}</Text>
         </Pressable>
-
       </View>
     );
   }
   // PROPS-GIVEN THEME (passed to Button.tsx) 
   else {
     return (
-      <View style={styles.buttonContainer}>
-        <Pressable style={styles.button} onPress={() => alert('You pressed a button.')}>
+      <View style={[
+        styles.buttonContainer,
+        {width: 160, aspectRatio: 'auto', height: 70}
+      ]}>
+        <Pressable 
+          style={[styles.button, {borderRadius: 6}]} 
+          onPress={() => alert('You pressed a button.')}>
           <Text style={styles.buttonLabel}>{label}</Text>
         </Pressable>
       </View>
