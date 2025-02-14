@@ -14,7 +14,7 @@ export default function Index() {
     <View style={styles.appScreen}> 
     
       <View style={styles.searchSelection}>
-        <Text style={styles.header}> What are you looking for? </Text>
+        <Text style={styles.header}>What are you looking for?</Text>
         
         <View
           style={[
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   searchSelection: {
     flex: 1,
     justifyContent: "center",
-    padding: 20
+    padding: 20,
   },
   text: {
     color: "#fff",
