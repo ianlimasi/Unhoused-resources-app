@@ -1,10 +1,12 @@
-import { Text, View, StyleSheet } from 'react-native';
-import colors from "../colors"
+import React from "react";
+import MapView from "react-native-maps";
+import { StyleSheet, View } from "react-native";
+import { PROVIDER_GOOGLE } from "react-native-maps";
 
-export default function AboutScreen() {
+export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>map_page</Text>
+      <MapView style={styles.map} provider={PROVIDER_GOOGLE} />
     </View>
   );
 }
@@ -12,11 +14,9 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  text: {
-    color: '#000',
+  map: {
+    width: "100%",
+    height: "100%",
   },
 });
