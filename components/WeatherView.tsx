@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as Location from 'expo-location';
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import colors from "@/app/colors";
 
 type Alert = {
   headline: string;
@@ -81,13 +82,54 @@ export default function WeatherView() {
   }
 
   return (
-    <View>
-      {weather?.temp_f}
-      {alerts
-        .filter(item => (item.msgtype === 'Alert'))
-        .map(item => (
-          <Text>{item.headline}</Text>
-      ))}
+    <View style={styles.weatherContainer}>
+      {(weather == null) ? (
+        <View style={styles.weatherHeader} />
+      ) : (
+        <View style={styles.weatherHeader}>
+          {weather?.temp_f + ' °F / ' + weather?.temp_c + ' °C'}
+        </View>
+      )}
+      <View style={styles.alertsContainer}>
+        {alerts
+          .filter(item => (item.msgtype === 'Alert'))
+          .map(item => (
+            <AlertItem alert={item}/>
+        ))}
+      </View>
     </View>
   );
 }
+
+type AlertProps = {
+  alert: Alert;
+};
+
+function AlertItem({ alert }: AlertProps) {
+  return (
+    <View style={styles.alert}>
+      {alert.headline}
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  weatherContainer: {
+    width: '80%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: 'white'
+  },
+  weatherHeader: {
+    backgroundColor: colors.navyBlue,
+    width: '100%',
+    alignItems: 'center',
+  },
+  alertsContainer: {
+    
+  },
+  alert: {
+    backgroundColor: colors.navyBlue,
+    alignItems: 'center',
+  },
+});

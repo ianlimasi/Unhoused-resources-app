@@ -29,9 +29,8 @@ export default function Index() {
         </View>
         <Button label="Submit"/>
       </View>
-      <View>
-          <WeatherView/>
-      </View>
+      <Text style={styles.header}>Weather Alerts</Text>
+      <WeatherView />
       {/* <Text style={styles.text}>Home screen</Text>
       <Link href="/about" style={styles.button}>
         Go to About screen
