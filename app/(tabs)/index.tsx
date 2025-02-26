@@ -1,11 +1,9 @@
 import { Text, View, StyleSheet } from "react-native";
-import { Link } from "expo-router";
-import { Image } from "expo-image";
 
 import Button from "@/components/Button";
-import ImageViewer from "@/components/ImageViewer";
 
 import colors from "../colors";
+import WeatherView from "@/components/WeatherView";
 
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
@@ -31,8 +29,9 @@ export default function Index() {
         </View>
         <Button label="Submit"/>
       </View>
-
-
+      <View>
+          <WeatherView/>
+      </View>
       {/* <Text style={styles.text}>Home screen</Text>
       <Link href="/about" style={styles.button}>
         Go to About screen
