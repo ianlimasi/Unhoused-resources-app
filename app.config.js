@@ -9,14 +9,19 @@ export default {
     icon: "./assets/images/icon.png",
     scheme: "myapp",
     userInterfaceStyle: "automatic",
-    newArchEnabled: true,
+    newArchEnabled: false,
     ios: {
       supportsTablet: true,
+      bundleIdentifier: "com.unhousedresourcesproject",
+      infoPlist: {
+        ITSAppUsesNonExemptEncryption: false,
+      },
       config: {
         googleMapsApiKey: process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY, // Loads API key from .env
       },
     },
     android: {
+      package: "com.unhousedresourcesproject",
       adaptiveIcon: {
         foregroundImage: "./assets/images/adaptive-icon.png",
         backgroundColor: "#ffffff",
@@ -43,6 +48,9 @@ export default {
       typedRoutes: true,
     },
     extra: {
+      eas: {
+        projectId: "5c76eb1b-045c-45da-9e34-1c004c4f3292",
+      },
       router: {
         origin: false,
       },
