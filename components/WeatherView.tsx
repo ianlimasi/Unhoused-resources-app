@@ -32,27 +32,30 @@ export default function WeatherView() {
   const [weather, setWeather] = useState<Weather | null>(null);
 
   useEffect(() => {
-    update();
+    getCurrentLocationAysnc();
   }, []);
 
-  const update = async () => {
-    getCurrentLocationAysnc();
-    getWeatherAsync();
-    getWeatherAlertsAsync();
-  }
+  useEffect(() => {
+    if (location) {
+      getWeatherAsync();
+      getWeatherAlertsAsync();
+    }
+  }, [location]);
 
   const getCurrentLocationAysnc = async () => {
     let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        return;
-      }
+    if (status !== 'granted') {
+      console.log("location permissions failed");
+      return;
+    }
 
     let location = await Location.getCurrentPositionAsync({});
     setLocation(location);
+    console.log("location set as " + location.coords.latitude);
   }
 
   const getWeatherAlertsAsync = async () => {
-    if (location == null) {
+    if (location === null) {
       return;
     }
     try {
@@ -67,7 +70,7 @@ export default function WeatherView() {
   }
 
   const getWeatherAsync = async () => {
-    if (location == null) {
+    if (location === null) {
       return;
     }
     try {
@@ -83,11 +86,15 @@ export default function WeatherView() {
 
   return (
     <View style={styles.weatherContainer}>
-      {(weather == null) ? (
-        <View style={styles.weatherHeader} />
+      {(weather === null) ? (
+        <View style={styles.weatherHeader}>
+          <Text style={styles.headerText}>Loading...</Text>  
+        </View>
       ) : (
         <View style={styles.weatherHeader}>
-          {weather?.temp_f + ' °F / ' + weather?.temp_c + ' °C'}
+          <Text style={styles.headerText}>
+            {weather?.temp_f + ' °F / ' + weather?.temp_c + ' °C'} 
+          </Text>
         </View>
       )}
       <View style={styles.alertsContainer}>
@@ -124,6 +131,13 @@ const styles = StyleSheet.create({
     backgroundColor: colors.navyBlue,
     width: '100%',
     alignItems: 'center',
+    color: 'white',
+    height: 100,
+    borderRadius: 10,
+    padding: 10,
+  },
+  headerText: {
+    color: 'white',
   },
   alertsContainer: {
     

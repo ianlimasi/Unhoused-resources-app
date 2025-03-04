@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 
 import Button from "@/components/Button";
 
@@ -9,33 +9,30 @@ const PlaceholderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
   return (
-    <View style={styles.appScreen}> 
-    
+    <ScrollView>
+      <View style={styles.appScreen}> 
+      
       <View style={styles.searchSelection}>
         <Text style={styles.header}>What are you looking for?</Text>
         
         <View
-          style={[
-            styles.buttonsContainer,
-            {
-              // Try setting `flexDirection` to `"row"`.
-              flexDirection: 'row',
-            },
-          ]}>
+          style={styles.buttonsContainer}>
           <Button label="Hygiene" theme="primary"/>
           <Button label="Food Banks" theme="primary"/>
           <Button label="Medical" theme="primary"/>
           <Button label="Shelter" theme="primary"/>
         </View>
         <Button label="Submit"/>
+        </View>
+        <Text style={styles.header}>Weather Alerts</Text>
+        <WeatherView />
+        {/* <Text style={styles.text}>Home screen</Text>
+        <Link href="/about" style={styles.button}>
+          Go to About screen
+        </Link> */}
       </View>
-      <Text style={styles.header}>Weather Alerts</Text>
-      <WeatherView />
-      {/* <Text style={styles.text}>Home screen</Text>
-      <Link href="/about" style={styles.button}>
-        Go to About screen
-      </Link> */}
-    </View>
+    </ScrollView>
+
   );
 }
 
@@ -49,7 +46,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  }, 
+  },
   searchSelection: {
     flex: 1,
     justifyContent: "center",
@@ -68,13 +65,9 @@ const styles = StyleSheet.create({
     textDecorationLine: "underline",
     color: "#fff",
   },
-  imageContainer: { //! imgCont is a FLEXBOX!
-    flex: 1,
-  },
   buttonsContainer: {
     width: '100%',
-    // borderColor: "black",
-    // borderWidth: 10,
     flexWrap: 'wrap',
+    flexDirection: 'row',
   },
 });
