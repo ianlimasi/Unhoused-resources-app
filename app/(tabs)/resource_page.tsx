@@ -4,11 +4,19 @@ import MapButton from '@/components/MapButton';
 import Ionicons from '@expo/vector-icons/Ionicons' // Popular icons
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { useFonts } from 'expo-font';
 
 import Carousel from 'react-native-snap-carousel';
 import ResImage from '@/components/ResImage';
 
 export default function resource_page() {
+  const [fontsLoaded] = useFonts({
+    "Roboto-Regular": require("@/assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Italic": require("@/assets/fonts/Roboto-Italic.ttf"),
+    "Roboto-Bold": require("@/assets/fonts/Roboto-Bold.ttf"),
+    "Roboto-BoldItalic": require("@/assets/fonts/Roboto-BoldItalic.ttf"),
+  });
+
   return (
     <View>
       <Text style = {styles.header}>Capitol Hill Community Lunch</Text>
@@ -47,7 +55,7 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     color: '#37637C',
     fontSize: 32,
-    fontFamily: 'Roboto',
+    fontFamily: 'Roboto-Bold',
     fontWeight: 'bold',
     width: 292,
     borderColor : 'red',

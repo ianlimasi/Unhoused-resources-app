@@ -12,10 +12,10 @@ export default function MapButton ({texts, icon}: Props) {
     const[textWidth, settextWidth] = useState(0);
 
     return(
-    <View style={[styles.box, {width: texts.length*13}]}>
+    <Pressable style={[styles.box, {width: texts.length*13}]} onPress={() => alert('You pressed a button.')}>
         <FontAwesome5 name={icon} color='#fff' size={16} marginLeft={5}/>
         <Text style={[styles.text, {width:texts.length*9}]}>{texts}</Text>
-    </View>
+    </Pressable>
     )
 }
 
