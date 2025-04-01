@@ -15,6 +15,8 @@ export default function resource_page() {
     "Roboto-Italic": require("@/assets/fonts/Roboto-Italic.ttf"),
     "Roboto-Bold": require("@/assets/fonts/Roboto-Bold.ttf"),
     "Roboto-BoldItalic": require("@/assets/fonts/Roboto-BoldItalic.ttf"),
+    "Roboto-Medium": require("@/assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-MediumItalic": require("@/assets/fonts/Roboto-MediumItalic.ttf"),
   });
 
   return (
