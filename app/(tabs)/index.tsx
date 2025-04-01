@@ -12,32 +12,26 @@ const PlaceholderImage = require("@/assets/images/background-image.png");
 export default function Index() {
   return (
     <View style={styles.appScreen}> 
-      {/* IMAGE */}
-      <View style={styles.imageContainer}>
-        {/* <Image source={PlaceholderImage} style={styles.image}/> */}
-        <ImageViewer imgSource={PlaceholderImage}/>
+    
+      <View style={styles.searchSelection}>
+        <Text style={styles.header}>What are you looking for?</Text>
+        
+        <View
+          style={[
+            styles.buttonsContainer,
+            {
+              // Try setting `flexDirection` to `"row"`.
+              flexDirection: 'row',
+            },
+          ]}>
+          <Button label="Hygiene" theme="primary"/>
+          <Button label="Food Banks" theme="primary"/>
+          <Button label="Medical" theme="primary"/>
+          <Button label="Shelter" theme="primary"/>
+        </View>
+        <Button label="Submit"/>
       </View>
 
-      {/* BUTTON */}
-      <View style={styles.buttonsContainer}>
-        <Button theme="primary" label="Choose a photo"/>
-        <Button label="Use this photo"/>
-      </View>
-
-      {/* TODO: LEFTOFF */}
-      {/* Button-images (TO-BE BUTTONS) */}
-      <View
-        style={[
-          styles.buttonImages,
-          {
-            // Try setting `flexDirection` to `"row"`.
-            flexDirection: 'column',
-          },
-        ]}>
-        <View style={{flex: 1, backgroundColor: 'red'}} />
-        <View style={{flex: 2, backgroundColor: 'darkorange'}} />
-        <View style={{flex: 3, backgroundColor: 'green'}} />
-      </View>
 
       {/* <Text style={styles.text}>Home screen</Text>
       <Link href="/about" style={styles.button}>
@@ -58,20 +52,31 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   }, 
+  searchSelection: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 20,
+  },
   text: {
     color: "#fff",
+  },
+  header: {
+    fontWeight: 'bold',
+    fontSize: 35,
+    color: colors.navyBlue
   },
   button: {
     fontSize: 20,
     textDecorationLine: "underline",
     color: "#fff",
   },
-
   imageContainer: { //! imgCont is a FLEXBOX!
     flex: 1,
   },
   buttonsContainer: {
-    flex: 1 / 3,
-    alignItems: 'center',
+    width: '100%',
+    // borderColor: "black",
+    // borderWidth: 10,
+    flexWrap: 'wrap',
   },
 });
