@@ -11,8 +11,10 @@ export default function ResImage ({uri}: Props) {
 
             <View style={styles.colContainer}>
                 <Image source={uri} style={[styles.img, {height: 135}, {width:136}]}/>
-                <Image source={uri} style={[styles.img, {height: 135}, {width:136}]}/>
+                <Image source={uri} style={[styles.img, {height: 135}, {width:136}, {marginTop:10}]}/>
             </View>
+
+            <Image source={uri} style={styles.img}/>
         </View>
     );
 }
@@ -35,8 +37,8 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     },
     img : {
-        width: 230,
-        height: 272,
+        width: 240,
+        height: 282,
         borderRadius: 21,
 
         borderColor : 'lightblue',
