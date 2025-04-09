@@ -4,10 +4,10 @@ import colors from '../colors';
 export default function AboutScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>helpers_page</Text>
+      <Text style={styles.text}>TEST by Jong</Text>
     </View>
   );
-}
+}s
 
 const styles = StyleSheet.create({
   container: {
