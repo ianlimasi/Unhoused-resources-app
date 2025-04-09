@@ -145,5 +145,7 @@ const styles = StyleSheet.create({
   alert: {
     backgroundColor: colors.navyBlue,
     alignItems: 'center',
+    borderRadius: 10,
+    padding: 10,
   },
 });
