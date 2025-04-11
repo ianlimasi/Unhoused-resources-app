@@ -4,6 +4,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import { Feather } from '@expo/vector-icons'
 import { Ionicons } from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Foundation } from "@expo/vector-icons";
 import colors from "@/app/colors";
 
 type Alert = {
@@ -107,6 +108,7 @@ export default function WeatherView() {
       <View style={styles.alertsContainer}>
         {alerts
           .filter(item => (item.msgtype === 'Alert'))
+          .filter((item, index, self) => index === self.findIndex(a => a.headline === item.headline))
           .map(item => (
             <AlertItem alert={item}/>
         ))}
@@ -122,7 +124,8 @@ type AlertProps = {
 function AlertItem({ alert }: AlertProps) {
   return (
     <View style={styles.alert}>
-      {alert.headline}
+      <Foundation name="alert" style={styles.alertIcon}/>
+      <Text style={styles.alertText}>{alert.headline}</Text>
     </View>
   )
 }
@@ -193,13 +196,25 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   alertsContainer: {
-
+    margin: 5,
   },
   alert: {
     backgroundColor: '#4F5D6C',
     alignItems: 'center',
     borderRadius: 10,
     padding: 10,
+    marginTop: 10,
+    flexDirection: 'row',
+    width: '90%',
+    alignSelf: 'center'
+  },
+  alertText: {
+    color: 'white',
+  },
+  alertIcon: {
+    color: 'white',
+    fontSize: 20,
+    marginRight: 10,
   },
   iconContainer: {
     alignItems: 'center',
@@ -226,5 +241,5 @@ const styles = StyleSheet.create({
     color: 'white',
     opacity: 0.5,
     marginVertical: 1,
-  }
+  },
 });
