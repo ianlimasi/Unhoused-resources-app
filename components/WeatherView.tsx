@@ -104,12 +104,18 @@ export default function WeatherView() {
     <View style={styles.weatherContainer}>
       {(weather === null) ? (
         <View style={styles.weatherHeader}>
-          <Text style={styles.headerText}>Loading...</Text>  
+          <View style={styles.weatherTop}>
+              <View style={styles.weatherRefresh}/>
+              <View style={styles.weatherSwitch}/>
+          </View>
+          <View style={styles.weatherContent}>
+            <Text style={styles.headerText}>Loading...</Text>
+          </View>
         </View>
       ) : (
         <View style={styles.weatherHeader}>
           <View style={styles.weatherTop}>
-          <Pressable onPress={() => setRefresh(prev => !prev)}><SimpleLineIcons name="refresh" style={styles.weatherRefresh}/></Pressable>
+            <Pressable onPress={() => setRefresh(prev => !prev)}><SimpleLineIcons name="refresh" style={styles.weatherRefresh}/></Pressable>
             <View style={styles.weatherSwitch}>
               <Text style={styles.switchLabel}>°F</Text>
               <Switch 
