@@ -134,3 +134,9 @@ dist
 
 expo-env.d.ts
 # @end expo-cli
+
+######
+# Custom Ignores
+
+# ignore 'npx expo start' -> .expo/types/router.d.ts
+.expo/types/router.d.ts
