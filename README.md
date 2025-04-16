@@ -2,15 +2,21 @@
 # Project Title
 Unhoused Resources App
 
+## My branch: feature/resources-page
+
 ## Description
 A mobile app/website that aims to connect unhoused individuals and their supporters with essential resources across Seattle. 
 
 - I'm responsible for UI design in Figma, implementing interactive elements using React Native, integrating Google Maps API, and managing backend data with Supabase.
 - I improved the intuitiveness of page interfaces, cutting user decision/learning time by 87.5%.
 
-## My Contributions (As of April 1st, 2025)
+## My Contributions (As of April 16th, 2025)
 **app/(tabs)/resource_page.tsx**
 - Responsible for displaying and organizing the main resource page.
+- Will be integrated with data from the Google Maps API.
+
+**app/(tabs)/list_page/index.tsx**
+- Responsible for displaying and organizing the resources list page.
 - Will be integrated with data from the Google Maps API.
 
 **components/ResImage.tsx**
@@ -31,6 +37,10 @@ A mobile app/website that aims to connect unhoused individuals and their support
 **components/ReviewStars.tsx**
 - Developed a customizable review stars component
 - Will be used to display the ratings of a resource.
+
+**components/ListBox.tsx**
+- Developed a customizable resource list box component
+- Will be used to display a list of the resources.
 
 ## Getting Started
 
