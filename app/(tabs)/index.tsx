@@ -37,10 +37,6 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
-  buttonImages: {
-    flex: 1,
-    padding: 20,
-  },
   appScreen: {
     backgroundColor: 'white',
     flex: 1,
@@ -50,6 +46,7 @@ const styles = StyleSheet.create({
   searchSelection: {
     flex: 1,
     justifyContent: "center",
+    alignItems: 'center',
     padding: 20,
   },
   text: {
@@ -59,11 +56,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 35,
     color: colors.navyBlue
-  },
-  button: {
-    fontSize: 20,
-    textDecorationLine: "underline",
-    color: "#fff",
   },
   buttonsContainer: {
     width: '100%',
