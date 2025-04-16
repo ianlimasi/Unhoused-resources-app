@@ -1,14 +1,36 @@
-// LEO: my first pull-request
-// RAAHIL: My first commit
 
-// NOTE: This is just a place-holder template to fill out
 # Project Title
-
 Unhoused Resources App
 
 ## Description
+A mobile app/website that aims to connect unhoused individuals and their supporters with essential resources across Seattle. 
 
-An in-depth paragraph about your project and overview of use.
+- I'm responsible for UI design in Figma, implementing interactive elements using React Native, integrating Google Maps API, and managing backend data with Supabase.
+- I improved the intuitiveness of page interfaces, cutting user decision/learning time by 87.5%.
+
+## My Contributions (As of April 1st, 2025)
+**app/(tabs)/resource_page.tsx**
+- Responsible for displaying and organizing the main resource page.
+- Will be integrated with data from the Google Maps API.
+
+**components/ResImage.tsx**
+- Created the image display component that handles different image layouts and responsiveness on the Resources Page.
+
+**components/MapButton.tsx**
+- Developed a customizable button component with dynamic text and icons.
+- Will be used to redirect users to resources (directions, call, save, website) or filter pins on the map page (food, hygiene, shelter, etc).
+
+**components/ReviewBar.tsx**
+- Developed a review bar component with a resizable colored part/progress.
+- Will be used to roughly indicate what percentage of users rate 5,4,3,2 and 1 stars.
+
+**components/ReviewBox.tsx**
+- Developed a customizable review box component.
+- Will be used to display the review, profile picture, and profile data of each reviewer.
+
+**components/ReviewStars.tsx**
+- Developed a customizable review stars component
+- Will be used to display the ratings of a resource.
 
 ## Getting Started
 
@@ -40,39 +62,3 @@ Once everything is installed properly...
 * git pull (just to make sure)
 * npm install (installs all necessary packages from package.json)
 * npx expo start (follow error fixing instructions if necessary)
-
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
